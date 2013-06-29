@@ -10,6 +10,7 @@
 
     
     <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
@@ -26,17 +27,12 @@
             android:text="@string/hello_world"
             tools:context=".Festival" />
 
+        
         <Gallery
             android:id="@+id/gallery1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.10" />
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.81" />
+            />
     </LinearLayout>    
 
 </RelativeLayout>

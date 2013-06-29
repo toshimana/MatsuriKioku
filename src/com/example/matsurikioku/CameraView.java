@@ -16,13 +16,13 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback, C
 		
 		holder = getHolder();
 		holder.addCallback(this);
-		
 		holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 	}
 	
 	public void surfaceCreated(SurfaceHolder holder) {	
 		try {
 			camera = Camera.open();		
+			camera.setDisplayOrientation(90);
 			camera.setPreviewDisplay(holder);
 
 			/*

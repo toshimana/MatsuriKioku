@@ -29,13 +29,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private List<KiokuItem> kiokuList;
 	private KiokuArrayAdapter adapter;
-	private String festival = "祭り";
+	private String festival = "青葉祭り";
 	private static final String miraiKiokuUrl = "http://www.miraikioku.com/api/search/kioku";
 	private static final String BR = System.getProperty("line.separator");
 	private ProgressDialog progressDialog;
@@ -55,36 +56,23 @@ public class MainActivity extends Activity {
         Gallery gallery = (Gallery)findViewById(R.id.gallery1);
         gallery.setAdapter(adapter);
          
-        /*
-        ListView listView = (ListView)findViewById(R.id.previewlist);
-        listView.setScrollingCacheEnabled(false); 
-        listView.setBackgroundColor(Color.WHITE);
-        listView.setAdapter(adapter);
-         */
-        /*
-        listView.setOnItemClickListener(new ListView.OnItemClickListener(){
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				Intent intent = new Intent(Festival.this, Kioku.class);
-				KiokuItem item = (KiokuItem)arg0.getItemAtPosition(arg2);
-				intent.putExtra("Prefecture", prefecture);
-				intent.putExtra("Festival", festival);
-				intent.putExtra("Kioku", item.title);
-				intent.putExtra("ImageUrl", item.imageUrl);
-				startActivity(intent);
-			}
-        });
-*/
         gallery.setOnItemClickListener(new Gallery.OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				KiokuItem item = (KiokuItem)arg0.getItemAtPosition(arg2);
-				ImageView imageView = (ImageView)findViewById(R.id.imageView1);
+//				View view = (View)findViewById(R.id.imageView1);
+//				Activity activity = (Activity)view.getContext();
+//				ImageView imageView = new ImageView(MainActivity.this);
+//				activity.setContentView(imageView);
+//				ImageView imageView = (ImageView)findViewById(R.id.imageView1);
 				final String title = item.title;
-				final String imageUrl = item.imageUrl;
+//				final String imageUrl = item.imageUrl;
 				final String desc = item.desc;
+
+				final String toastTitle = "【 Title : " + title + " 】" + BR;
+				Toast.makeText(MainActivity.this, toastTitle + desc, Toast.LENGTH_LONG).show();
+				/*
 				Bitmap b = ImageMap.getImage(imageUrl);
 				if (b != null) {
 					imageView.setImageBitmap(b);
@@ -102,6 +90,7 @@ public class MainActivity extends Activity {
 					}
 
 				});
+			*/
 			}
         });
 
@@ -111,6 +100,17 @@ public class MainActivity extends Activity {
         progressDialog.setCancelable(true);
         progressDialog.show();
         getData();
+        
+//        View view = (View)findViewById(R.id.imageView1);
+//        Activity activity = (Activity)view.getContext();
+//        activity.setContentView(new CameraView(this));
+
+        LinearLayout layout = (LinearLayout)findViewById(R.id.layout1);
+        CameraView camera1 = new CameraView(this);
+        LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//        param1.height = 400;
+        camera1.setLayoutParams(param1);
+        layout.addView(camera1);
     }
 
     
