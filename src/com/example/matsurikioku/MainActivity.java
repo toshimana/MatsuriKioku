@@ -67,12 +67,11 @@ public class MainActivity extends Activity {
 //				activity.setContentView(imageView);
 				ImageView imageView = (ImageView)findViewById(R.id.imageView1);
 				final String title = item.title;
-//				final String imageUrl = item.imageUrl;
+				final String imageUrl = item.imageUrl;
 				final String desc = item.desc;
 
-				final String toastTitle = "【 Title : " + title + " 】" + BR;
-				Toast.makeText(MainActivity.this, toastTitle + desc, Toast.LENGTH_LONG).show();
-				/*
+//				final String toastTitle = "【 Title : " + title + " 】" + BR;
+//				Toast.makeText(MainActivity.this, toastTitle + desc, Toast.LENGTH_LONG).show();
 				Bitmap b = ImageMap.getImage(imageUrl);
 				if (b != null) {
 					imageView.setImageBitmap(b);
@@ -90,7 +89,6 @@ public class MainActivity extends Activity {
 					}
 
 				});
-			*/
 			}
         });
 
