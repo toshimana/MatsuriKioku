@@ -27,6 +27,11 @@
             android:text="@string/hello_world"
             tools:context=".Festival" />
 
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
         
         <Gallery
             android:id="@+id/gallery1"

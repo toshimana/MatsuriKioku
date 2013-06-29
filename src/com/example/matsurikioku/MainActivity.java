@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 //				Activity activity = (Activity)view.getContext();
 //				ImageView imageView = new ImageView(MainActivity.this);
 //				activity.setContentView(imageView);
-//				ImageView imageView = (ImageView)findViewById(R.id.imageView1);
+				ImageView imageView = (ImageView)findViewById(R.id.imageView1);
 				final String title = item.title;
 //				final String imageUrl = item.imageUrl;
 				final String desc = item.desc;
