@@ -1,4 +1,4 @@
-package com.example.matsurikioku;
+package jp.tmanabe.matsurikioku;
 
 import java.io.BufferedReader;
 import java.io.IOException;

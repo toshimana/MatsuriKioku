@@ -1,4 +1,4 @@
-package com.example.matsurikioku;
+package jp.tmanabe.matsurikioku;
 
 import android.content.Context;
 import android.hardware.Camera;

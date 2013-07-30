@@ -1,4 +1,4 @@
-package com.example.matsurikioku;
+package jp.tmanabe.matsurikioku;
 
 public class KiokuItem {
 	String title;

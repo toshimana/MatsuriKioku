@@ -3,7 +3,7 @@
  * http://www.amazon.co.jp/dp/4048860682/
  */
 
-package com.example.matsurikioku;
+package jp.tmanabe.matsurikioku;
 
 import java.util.Map;
 import java.util.WeakHashMap;
